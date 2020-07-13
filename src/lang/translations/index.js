@@ -1,10 +1,12 @@
 export default {
 	en: {
 		name: 'English',
-		load: () => { return import('./en.json'); },
+		load: () => { return Promise.resolve({}); },
+		// for global messages, change the above line to:
+		// load: () => { return import('./en.json'); },
 	},
-	cs: {
-		name: 'Česky',
-		load: () => { return import('./cs.json'); },
+	nl: {
+		name: 'Nederlands',
+		load: () => { return Promise.resolve({}); },
 	},
 };
