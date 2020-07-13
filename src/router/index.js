@@ -1,8 +1,15 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import LangRouter from 'vue-lang-router'
 import Home from '../views/Home.vue'
+import translations from '../lang/translations'
+import localizedURLs from '../lang/localized-urls'
 
-Vue.use(VueRouter)
+
+Vue.use(LangRouter, {
+	defaultLanguage: 'en',
+	translations,
+	localizedURLs,
+})
 
   const routes = [
   {
@@ -20,7 +27,7 @@ Vue.use(VueRouter)
   }
 ]
 
-const router = new VueRouter({
+const router = new LangRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
