@@ -12,6 +12,13 @@
 <template>
   <div class="hello">
     <h1>{{ $t('hello') }}</h1>
+    <a href="#" @click.prevent="switchMetricSystem('km')">
+      {{$t('metrics.kilometers')}}
+    </a>
+     |
+    <a href="#" @click.prevent="switchMetricSystem('mi')">
+      {{$t('metrics.miles')}}
+    </a>
   </div>
 </template>
 
@@ -20,6 +27,11 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    switchMetricSystem(metric) {
+      this.$store.commit('setMetricSystem', metric);
+    }
   }
 }
 </script>
